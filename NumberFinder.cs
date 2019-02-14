@@ -6,10 +6,12 @@ namespace PadawansTask6
     {
         public static int? NextBiggerThan(int number)
         {
+            if (number <= 0)
+                throw new ArgumentException();
             if (Math.Abs(number) / 10 == 0)
                 return null;
             if (number == int.MaxValue)
-                throw new OverflowException();
+                throw new ArgumentException();
             int powerOfDivisor = 1;
             int divisor = 10;
             while (number % divisor != number)
